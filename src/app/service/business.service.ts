@@ -9,8 +9,8 @@ export class BusinessService {
   // private apiUrl = 'https://localhost:7000/api/Business';
   // private cus_ApiUrl = 'https://localhost:7000/api/Customer';
 
-  private apiUrl = 'https://longsagedart84.conveyor.cloud/api/Business';
-  private cus_ApiUrl = 'https://longsagedart84.conveyor.cloud/api/Customer';
+  private apiUrl = 'https://reg-apis.onrender.com/api/Business';
+  private cus_ApiUrl = 'https://reg-apis.onrender.com/api/Customer';
 
 
   constructor(private http: HttpClient) {}
