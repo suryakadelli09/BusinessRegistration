@@ -114,3 +114,7 @@
 .no-records-message {
   text-align: center;
 }
+.button {
+  min-width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}

@@ -3,6 +3,7 @@ import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GoogleMapsModule } from "@angular/google-maps";
 import { BusinessService } from '../service/business.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customerregistration',
@@ -24,7 +25,7 @@ export class CustomerregistrationComponent implements OnInit {
   zoom = 10;
   marker: google.maps.LatLngLiteral | null = null;
 
-  constructor(private fb: FormBuilder, private businessService: BusinessService) {
+  constructor(private fb: FormBuilder, private businessService: BusinessService, private router: Router) {
     this.cusRegisterForm = this.fb.group({
       Cus_Id: [0],
       Cus_EmailId: ['', [Validators.required, Validators.email]],
@@ -169,4 +170,10 @@ export class CustomerregistrationComponent implements OnInit {
     // Optional: Log the alert for debugging purposes
     console.log(`[${type.toUpperCase()}] ${message}`);
   }
+  goBack () : void {
+    this.router.navigate(['/login']);
+  }
+  // resetForm() {
+  //   <this class="loadData"></this>;
+  // }
 }

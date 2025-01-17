@@ -46,7 +46,7 @@ export class BusinesssearchComponent implements OnInit {
 
   // Method to generate the full image URL
   getImageUrl(visitingCard: string): string {
-    return `${this.imageBaseUrl}${visitingCard.split("\\").pop()}`;
+    return `${this.imageBaseUrl}${visitingCard.split("/").pop()}`;
   }
 
   // Handle category selection
