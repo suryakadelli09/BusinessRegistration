@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BusinesssearchComponent } from './businesssearch.component';
 import { BusinessService } from '../service/business.service';
+import { By } from '@angular/platform-browser';
 
 describe('BusinesssearchComponent', () => {
   let component: BusinesssearchComponent;
@@ -23,4 +24,11 @@ describe('BusinesssearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+ 
+  
+
+  // it('should check ',() =>{
+  //   expect(component.categories).toBeUndefined();
+  // });
 });
