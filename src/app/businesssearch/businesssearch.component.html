@@ -5,7 +5,7 @@
   <div class="section">
     <h6>Category</h6>
     <div class="grid mb-2">
-      <button type="button" class="btn btn-outline-secondary btn-sm category-button" *ngFor="let category of categories" [class.active]="selectedCategory === category"
+      <button type="button" class="btn btn-outline-secondary btn-sm category-button" *ngFor="let category of categories" [class.active]="category.categoryName === selectedCategory"
         (click)="selectCategory(category)">
         {{ category?.categoryName}}
       </button>

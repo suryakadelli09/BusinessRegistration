@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
   styleUrl: './customerregistration.component.css'
 })
 export class CustomerregistrationComponent implements OnInit {
+ 
+  title = 'Register Customer'
   cusRegisterForm: FormGroup;
   fileUpload: any;
   saveresponse: any;

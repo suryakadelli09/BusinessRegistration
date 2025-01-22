@@ -1,38 +1,37 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ActivatedRoute } from '@angular/router';
-
+import { By } from '@angular/platform-browser';
+ 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+ 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
-      providers: [
-        { 
-          provide: ActivatedRoute, 
-          useValue: { snapshot: { data: {} } } // Mock ActivatedRoute if required
-        },
-      ],
-      declarations: [AppComponent],
+      imports: [AppComponent,RouterTestingModule]
     }).compileComponents();
+ 
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
   });
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+ 
+  it('should create the component', () => {
+    expect(component).toBeTruthy();
   });
-
-  it(`should have the 'business' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
+ 
+  it('should contain a link with routerLink="/login"', () => {
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('business');
+    const loginLink = fixture.debugElement.query(By.css('a[routerLink="/login"]'));
+    expect(loginLink).toBeTruthy();
   });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+ 
+  it('should have the menulink class and be floated to the right', () => {
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, business');
+    const loginLink = fixture.debugElement.query(By.css('a[routerLink="/login"]'));
+    const element = loginLink.nativeElement;
+ 
+    expect(element.classList).toContain('menulink');
+    expect(element.style.float).toBe('right');
   });
 });
