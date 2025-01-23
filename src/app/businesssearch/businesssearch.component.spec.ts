@@ -141,4 +141,5 @@ describe('BusinesssearchComponent', () => {
       expect(distanceCell.nativeElement.textContent).toBe('5');
     });
   });
+  
 });
