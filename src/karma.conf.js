@@ -11,7 +11,7 @@ module.exports = function(config) {
         ],
         files: [
             // Other files to load before tests
-            'https://maps.gomaps.pro/maps/api/js?key=AlzaSy6dNsug9ZV2suB6C-Jl6xc2Y9QrUrZd6vR',
+            'https://maps.gomaps.pro/maps/api/js?key=AlzaSy68b-0GiRU0UWVrOc3rxpLi0K2elaIyOXG',
             // Include your test files here (e.g., test files, source files, etc.)
             'src/app/**/*.spec.ts',
           ],
