@@ -31,6 +31,7 @@
   </form>
 
   <!-- Business List Table -->
+  <div class="table-responsive">
   <table *ngIf="isTableVisible" class="business-table">
   <thead>
     <tr>
@@ -66,11 +67,12 @@
     </tr>
   </tbody>
   </table>
+  </div>
   <p *ngIf="isTableVisible && businessList.length === 0" class="no-records-message">
   No records found
   </p>
   <!-- Popup/Modal -->
-  <div class="popup" *ngIf="selectedBusiness">
+  <div class="popup modal-dialog-centered" *ngIf="selectedBusiness">
   <!-- Close Button -->
   <div class="popup-content">
     <span class="close" (click)="closePopup()">&times;</span>

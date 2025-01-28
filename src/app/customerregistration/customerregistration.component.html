@@ -81,12 +81,9 @@
         placeholder="Longitude will appear here">
     </div>
 
-    <!-- Submit Button -->
-    <div ><button type="submit" class="submit-btn" [disabled]="cusRegisterForm.invalid">Register Customer</button></div>
-
-    <div class="row d-flex mt-3"> 
+    <div class="d-flex"><div class="col-6" style="margin-right: 5px;"><button type="submit" class="submit-btn" [disabled]="cusRegisterForm.invalid">Register Customer</button></div>
       <div class="col-6"><button class="btn btn-outline-secondary button" (click)="goBack()">Back</button></div>
-      <!-- <div class="col-6"><button class="btn btn-outline-secondary button" (click)="resetForm()">Reset</button></div> -->
-     </div>
+    </div>
+    
   </form>
 </div>

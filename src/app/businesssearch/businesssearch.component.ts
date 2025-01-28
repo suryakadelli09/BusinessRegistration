@@ -28,7 +28,7 @@ export class BusinesssearchComponent implements OnInit {
   fileUpload: any;
   isTableVisible: boolean = false; // Table visibility flag
   //imageBaseUrl = 'https://localhost:7000/uploads/';
-  imageBaseUrl = 'https://reg-apis.onrender.com/uploads/';
+  imageBaseUrl = 'https://reg-apis.onrender.com/app/uploads/';
   latitudeDifference: number | null = null;
   longitudeDifference: number | null = null;
 
@@ -145,6 +145,7 @@ export class BusinesssearchComponent implements OnInit {
 
   // Method to generate the full image URL
   getImageUrl(visitingCard: string): string {
+    console.log("visitingCard", `${this.imageBaseUrl}${visitingCard.split("/").pop()}`);
     return `${this.imageBaseUrl}${visitingCard.split("/").pop()}`;
   }
 
