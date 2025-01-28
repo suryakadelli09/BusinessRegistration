@@ -217,10 +217,15 @@ export class RegisterbusinessComponent implements OnInit {
       },
       error: (error) => {
         // Handle errors during registration
+        let errorMessage = 'An error occurred during registration. Please try again.';
+
+        if (error.message.includes('409')) {
+          errorMessage = 'Email is already registered with the business.Try different business name';
+        }
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: 'An error occurred during registration. Please try again.',
+          text: errorMessage,
           confirmButtonText: 'Close',
         });
         this.registerForm.reset();
